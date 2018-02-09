@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">        
+        <title>Sistema Portaria | Ind Bandeirante de Plasticos</title>
+        <link rel="stylesheet" href="css/index.css" />
+        <link rel="icon" href="img/logonovo2.png"/>
+        <link rel="stylesheet" href="css/materialize.min.css" />
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />        
+    </head>    
+    <body>        
+	<section id="left-menu"> 
+                <div class="img edita-div"> 
+                    <div class="opcao-editar">
+                        
+                    </div>
+		</div>
+		<p class="nome-empresa">Ind Bandeirante</p> <!-- NOME DA EMPRESA -->		
+		<ul>					
+                    <li><span class="produt">INSERIR DADOS</span></li>
+                    <li><span class="alter-produt">ALTERAR DADOS</span></li>                    
+		</ul>		
+	</section>
+	<section id="right-conteudo">
+            <img src="img/voltar.png" class="foto-voltar">            
+            <div id="produto">                                                 
+                <div class="row">
+                    <div class="input-field col s4 geral">
+                        <input id="id" name="id" type="hidden" value=""/>
+                        <input id="data" type="text" class="validate"> 
+                        <label for="data">Data</label>
+                    </div>                    
+                    <div class="input-field col s6 geral">
+                        <select id="tipo" name="tipo" class="validate">
+                            <option value="" disabled selected>Selecione uma opcao</option>
+                            <option value="01">CONTROLE DE CHAVES</option>
+                            <option value="02">RECEBIMENTO-COLETA</option>
+                            <option value="03">SERVICO</option>                                                        
+                        </select>
+                        <label>Tipo</label>
+                    </div>
+                    <div id="controle-chave">
+                        <input type="hidden" id="cc_id" name="cc_id" />
+                        <div class="input-field col s6">
+                            <select id="cc_porteiro">                                 
+                            </select>
+                            <label>PORTEIRO</label>
+                        </div>                        
+                        <div class="input-field col s4 cc_name">
+                            <input id="cc_colab_ret" type="text" class="validate" data-length="30">
+                            <label for="cc_colab_ret">COLABORADOR-RETIRA</label>
+                        </div>                    
+                        <div class="input-field col s4 cc_name">
+                            <input id="cc_chave" type="text" class="validate" data-length="20">
+                            <label for="cc_chave">CHAVE</label>
+                        </div>
+                        <div class="input-field col s4 cc_name">
+                            <input id="cc_hr_ret" type="text" class="validate" data-length="20">
+                            <label for="cc_hr_ret">HORA RETIRA</label>
+                        </div>                                             
+                        <div class="row"></div>
+                        <div class="input-field col s4 cc_name dev">
+                            <input id="cc_data_dev" type="text" class="validate datepicker" data-length="20">
+                            <label for="cc_data_dev">DATA-DEVOLUCAO</label>
+                        </div>
+                        <div class="input-field col s6 cc_name dev">
+                            <select id="cc_porteiro_dev">                                 
+                            </select>
+                            <label>PORTEIRO</label>
+                        </div>                  
+                        <div class="input-field col s4 cc_name dev">
+                            <input id="cc_colab_dev" type="text" class="validate" data-length="30">
+                            <label for="cc_colab_dev">COLABORADOR-DEVOLVE</label>
+                        </div>      
+                        <div class="input-field col s4 cc_name dev">
+                            <input id="cc_hr_dev" type="text" class="validate" data-length="20">
+                            <label for="cc_hr_dev">HORA RETORNO</label>
+                        </div>                                                                                                            
+                        <div class="row">
+                            <button id="cc_inserir" class="btn waves-effect waves-light right" type="submit" name="action">Inserir
+                                <i class="material-icons right">send</i>                        
+                            </button>                    
+                            <button id="cc_atualizar" class="btn waves-effect waves-light right" type="submit" name="action">Salvar
+                                <i class="material-icons right">send</i>                        
+                            </button>                     
+                        </div>
+                    </div>
+                    <div id="recebimento">
+                        <input type="hidden" id="rc_id" name="rc_id" />
+                         <div class="input-field col s6">
+                            <select id="rc_porteiro" name="rc_porteiro">                                                     
+                            </select>
+                            <label>PORTEIRO</label>
+                        </div> 
+                        <div class="input-field col s4 rc_name">
+                            <input id="rc_hr_ent" type="text" class="validate" data-length="20">
+                            <label for="rc_hr_ent">HORA ENTRADA</label>
+                        </div>
+                          <div class="input-field col s4 rc_name">
+                            <input id="rc_hr_sai" type="text" class="validate" data-length="20">
+                            <label for="rc_hr_sai">HORA SAIDA</label>
+                        </div>                                      
+                        <div class="input-field col s4 rc_name">
+                            <input id="rc_emp" type="text" class="validate" data-length="30">
+                            <label for="rc_emp">EMPRESA</label>
+                        </div>                    
+                        <div class="input-field col s4 rc_name">
+                            <input id="rc_mot" type="text" class="validate" data-length="20">
+                            <label for="rc_mot">MOTORISTA</label>
+                        </div>                    
+                        <div class="input-field col s4 rc_name">
+                            <input id="rc_rg" type="text" class="validate" data-length="20">
+                            <label for="rc_rg">RG</label>
+                        </div>                    
+                        <div class="input-field col s4 rc_name">
+                            <input id="rc_pl" type="text" class="validate" data-length="20">
+                            <label for="rc_pl">PLACA</label>
+                        </div>                    
+                        <div class="input-field col s4 rc_name">
+                            <input id="rc_flc" type="text" class="validate" data-length="20">
+                            <label for="rc_flc">FALAR C/</label>
+                        </div>                                                                  
+                         <div class="input-field col s2 rc_name">
+                            <input id="rc_obs" type="text" class="validate" data-length="20">
+                            <label for="rc_obs">OBS</label>
+                        </div>
+                        <div class="input-field col s4 rc_name">
+                            <input id="rc_anot_sil" type="text" class="validate" data-length="30">
+                            <label for="rc_anot_sil">ANOTACAO SILVANA</label>
+                        </div> 
+                        <div class="row">
+                            <button id="rc_inserir" class="btn waves-effect waves-light right" type="submit" name="action">Inserir
+                                <i class="material-icons right">send</i>                        
+                            </button>                    
+                            <button id="rc_atualizar" class="btn waves-effect waves-light right" type="submit" name="action">Salvar
+                                <i class="material-icons right">send</i>                        
+                            </button>                     
+                        </div>
+                    </div>
+                    <div id="servico">
+                        <input type="hidden" id="se_id" name="se_id" />
+                        <div class="input-field col s6">
+                            <select id="se_porteiro" name="se_porteiro">                                                   
+                            </select>
+                            <label>PORTEIRO</label>
+                        </div>
+                        <div class="input-field col s4 se_name">
+                            <input id="se_hr_ent" type="text" class="validate" data-length="20">
+                            <label for="se_hr_ent">HORA ENTRADA</label>
+                        </div>
+                          <div class="input-field col s4 se_name">
+                            <input id="se_hr_sai" type="text" class="validate" data-length="20">
+                            <label for="se_hr_sai">HORA SAIDA</label>
+                        </div>                                      
+                        <div class="input-field col s4 se_name">
+                            <input id="se_emp" type="text" class="validate" data-length="30">
+                            <label for="se_emp">EMPRESA</label>
+                        </div>                    
+                        <div class="input-field col s4 se_name">
+                            <input id="se_mot" type="text" class="validate" data-length="20">
+                            <label for="se_mot">MOTORISTA</label>
+                        </div>                    
+                        <div class="input-field col s4 se_name">
+                            <input id="se_rg" type="text" class="validate" data-length="20">
+                            <label for="se_rg">RG</label>
+                        </div>                    
+                        <div class="input-field col s4 se_name">
+                            <input id="se_pl" type="text" class="validate" data-length="20">
+                            <label for="se_pl">PLACA</label>
+                        </div>                    
+                        <div class="input-field col s4 se_name">
+                            <input id="se_flc" type="text" class="validate" data-length="20">
+                            <label for="se_flc">FALAR C/</label>
+                        </div>                                                                 
+                        <div class="input-field col s2 se_name">
+                            <input id="se_obs" type="text" class="validate" data-length="20">
+                            <label for="se_obs">OBS</label>
+                        </div>         
+                        <div class="row">
+                            <button id="se_inserir" class="btn waves-effect waves-light right" type="submit" name="action">Inserir
+                                <i class="material-icons right">send</i>                        
+                            </button>                    
+                            <button id="se_atualizar" class="btn waves-effect waves-light right" type="submit" name="action">Salvar
+                                <i class="material-icons right">send</i>                        
+                            </button>                     
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+            <div id="cad_porteiro">
+                <input type="hidden" id="po_id" name="po_id" />
+                <div class="row">
+                    <div class="row">
+                        <h4>Informe o nome do porteiro para aparecer na lista</h4>
+                        <div class="input-field col s2">
+                            <input id="porteiroName" type="text" class="validate" data-length="20">
+                            <label for="porteiroName">Nome</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button id="cad_inserir" class="btn waves-effect waves-light right" type="submit" name="action">Cadastrar
+                            <i class="material-icons right">send</i>                        
+                        </button> 
+                        <button id="cad_atualizar" class="btn waves-effect waves-light right" type="submit" name="action">Atualizar
+                            <i class="material-icons right">send</i>                        
+                        </button>      
+                    </div>
+                </div>
+            </div>
+            <div id="alter-produto">                 
+                <div class="row">
+                    <div class="input-field col s6">
+                        <select id="p_tipo" name="p_tipo" class="validate">
+                            <option value="" disabled selected>Selecione uma opcao</option>
+                            <option value="01">CONTROLE DE CHAVES</option>
+                            <option value="02">RECEBIMENTO-COLETA</option>
+                            <option value="03">SERVICO</option>
+                            <option value="04">PORTEIROS</option>
+                        </select>
+                        <label>Tipo</label>
+                    </div>
+                    <div class="row"></div>
+                    <div class="input-field col s4 alter-date">                        
+                        <input id="data1" type="text" class="validate datepicker"> 
+                        <label for="data1">Data Inicial</label>
+                    </div>     
+                    <div class="input-field col s4 alter-date">                        
+                        <input id="data2" type="text" class="validate datepicker"> 
+                        <label for="data2">Data Final</label>
+                    </div>     
+                    <a class="waves-effect waves-light btn" id="p_botao-alterar">BUSCAR</a>                    
+                    <a class="waves-effect waves-light btn" id="p_filtro">NOVO FILTRO</a>                    
+                </div>
+                <div id="p_controle-chave">                                                                                  
+                    <table border="1" id="table" class="striped centered responsive-table bordered">
+                        <thead>
+                            <tr>
+                                <th style="display:none;">ID</th>
+                                <th>DATA</th>
+                                <th>PORTEIRO</th>    
+                                <th>COLABORADOR-RETIROU</th>
+                                <th>CHAVE</th>
+                                <th>HORA-RETIRA</th>                                
+                                <th>DATA-DEVOLUCAO</th>
+                                <th>PORTEIRO-DEVOLUCAO</th>                                
+                                <th>COLABORADOR-DEVOLVEU</th>
+                                <th>HORA-DEVOLUCAO</th>                                                                
+                            </tr>
+                        </thead>
+                        <tbody id="cc_tabela">
+                                
+                        </tbody>
+                    </table>
+                </div>
+                    <div id="p_recebimento">
+                        <table border="1" id="table" class="striped centered responsive-table bordered">
+                            <thead>
+                                <tr>
+                                    <th style="display:none;">ID</th>
+                                    <th>DATA</th>
+                                    <th>PORTEIRO</th>
+                                    <th>HORA-ENTRADA</th>
+                                    <th>HORA-SAIDA</th>
+                                    <th>EMPRESA</th>
+                                    <th>MOTORISTA</th>    
+                                    <th>RG</th>
+                                    <th>PLACA</th>
+                                    <th>FALAR COM</th>                                    
+                                    <th>OBS</th>
+                                    <th>ANOTACAO-SILVANA</th>                                
+                                </tr>
+                            </thead>
+                            <tbody id="rc_tabela">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="p_servico">
+                        <table border="1" id="table" class="striped centered responsive-table bordered">
+                            <thead>
+                                <tr>
+                                    <th style="display:none;">ID</th>
+                                    <th>DATA</th>
+                                    <th>PORTEIRO</th>
+                                    <th>HORA-ENTRADA</th>
+                                    <th>HORA-SAIDA</th>
+                                    <th>EMPRESA</th>
+                                    <th>MOTORISTA</th>    
+                                    <th>RG</th>
+                                    <th>PLACA</th>
+                                    <th>FALAR COM</th>                                    
+                                    <th>OBS</th>                                                                    
+                                </tr>
+                            </thead>
+                            <tbody id="se_tabela">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="p_porteiro">
+                        <table border="1" id="table" class="striped centered responsive-table bordered">
+                            <thead>
+                                <tr>
+                                    <th style="display:none;">ID</th>
+                                    <th>NOME PORTEIRO</th>                                    
+                                </tr>
+                            </thead>
+                            <tbody id="po_tabela">
+
+                            </tbody>
+                        </table>
+                    </div>
+            </div>                         
+	</section>	
+        <script src="js/jquery.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/index.js"></script>
+        <script src="js/materialize.min.js"></script>
+        <script src="js/jquery.maskedinput.min.js"></script>
+        <script src="js/Chart.js"></script>
+    </body>        
+</html>
